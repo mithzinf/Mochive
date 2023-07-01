@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mochive</title>
+    
+    <link rel="stylesheet" href="/css/movie.css">
+</head>
+<body>
+
+<h1>영화를 검색 해보새요ㅋ</h1>
+
+<form th:action="@{/mochive/find/result}" method="post">
+	<input type="text" name="searchKey" id="searchKey"/>
+	<button type="submit">검색</button>
+</form>
+
+<h3>영화 검색결과</h3>
+
+<div class="movieList">
+<div th:each="item: ${results}" class="movieItem">
+	<div th:text="${item.title}"></div>
+	<img th:src="${item.posterPath}" alt="" class="suggest_itemImage">
+</div>
+</div>
+
+</body>
+</html>

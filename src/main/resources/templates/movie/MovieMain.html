@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mochive</title>
+    
+    <link rel="stylesheet" href="/css/movie.css">
+</head>
+<body>
+
+
+<h1>~영화 메인 페이지~</h1>
+
+<div>
+<h5>영화 검색</h5>
+
+<form th:action="@{/mochive/find/result}" method="post">
+	<input type="text" name="searchKey" id="searchKey"/>
+	<button type="submit">검색</button>
+</form>
+</div>
+
+
+<div class="listTitle">현재 상영중</div>
+<div class="movieList">
+<div th:each="item: ${nowPlaying}" class="movieItem">
+	<div th:text="${item.title}"></div>
+	<img th:src="${item.posterPath}" alt="" class="suggest_itemImage">
+</div>
+</div>
+
+
+<div class="listTitle">인기</div>
+<div class="movieList">
+<div th:each="item: ${popular}" class="movieItem">
+	<div th:text="${item.title}"></div>
+	<img th:src="${item.posterPath}" alt="" class="suggest_itemImage">
+</div>
+</div>
+
+
+<div class="listTitle">좋은 평가</div>
+<div class="movieList">
+<div th:each="item: ${topRated}" class="movieItem">
+	<div th:text="${item.title}"></div>
+	<img th:src="${item.posterPath}" alt="" class="suggest_itemImage">
+</div>
+</div>
+
+
+</body>
+</html>

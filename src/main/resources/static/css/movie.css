@@ -1,0 +1,16 @@
+@charset "UTF-8";
+
+.movieList{
+	display: flex;
+	margin-top: 30px;
+}
+
+.listTitle{
+	font-size: 15pt;
+	display: inline;
+	margin-top: 30px;
+}
+
+.movieItem{
+	padding-right: 15px;
+}
